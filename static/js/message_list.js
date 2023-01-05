@@ -7,7 +7,9 @@ import {MessageListView} from "./message_list_view";
 import * as narrow_banner from "./narrow_banner";
 import * as narrow_state from "./narrow_state";
 import {page_params} from "./page_params";
+import render_stream_privacy from "../templates/stream_privacy.hbs";
 import * as stream_data from "./stream_data";
+import * as sub_store from "./sub_store";
 
 export class MessageList {
     constructor(opts) {
@@ -269,6 +271,12 @@ export class MessageList {
                 stream_icon = "zulip-icon zulip-icon-globe";
             }
         }
+        const stream = sub_store.get(sub.stream_id);
+        const stream_privacy_symbol_html = render_stream_privacy({
+            invite_only: stream.invite_only,
+            is_web_public: stream.is_web_public,
+        });
+
         this.view.render_trailing_bookend(
             stream_name,
             subscribed,
@@ -277,6 +285,7 @@ export class MessageList {
             can_toggle_subscription,
             page_params.is_spectator,
             stream_icon,
+            stream_privacy_symbol_html,
         );
     }
 

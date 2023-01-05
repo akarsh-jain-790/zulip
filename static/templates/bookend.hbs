@@ -11,20 +11,17 @@
             {{else if subscribed }}
                 {{#tr}}
                     You subscribed to stream <z-stream-icon></z-stream-icon>
-                    {{#*inline "z-stream-icon"}}<i class="{{stream_icon}} stream-icon" aria-hidden="true"></i>{{/inline}}
-                    {{stream_name}}
+                    {{#*inline "z-stream-icon"}}<strong>{{{stream_privacy_symbol_html}}}{{stream_name}}</strong>{{/inline}}
                 {{/tr}}
             {{else if just_unsubscribed }}
                 {{#tr}}
                     You unsubscribed from stream <z-stream-icon></z-stream-icon>
-                    {{#*inline "z-stream-icon"}}<i class="{{stream_icon}} stream-icon" aria-hidden="true"></i>{{/inline}}
-                    {{stream_name}}
+                    {{#*inline "z-stream-icon"}}<strong>{{{stream_privacy_symbol_html}}}{{stream_name}}</strong>{{/inline}}
                 {{/tr}}
             {{else}}
                 {{#tr}}
                     You are not subscribed to stream <z-stream-icon></z-stream-icon>
-                    {{#*inline "z-stream-icon"}}<i class="{{stream_icon}} stream-icon" aria-hidden="true"></i>{{/inline}}
-                    {{stream_name}}
+                    {{#*inline "z-stream-icon"}}<strong>{{{stream_privacy_symbol_html}}}{{stream_name}}</strong>{{/inline}}
                 {{/tr}}
             {{/if}}
         </span>
