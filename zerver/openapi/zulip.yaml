@@ -15436,6 +15436,21 @@ paths:
                             type: boolean
                             description: |
                               Include the message's content in email notifications for new messages.
+                          # custom_welcome_message_enabled:
+                          #   type: boolean
+                          #   description: |
+                          #     Indicates whether the organization is configured to include a custom message from administrators
+                          #     in the welcome message sent by the Welcome Bot to new users. When enabled, administrators can provide
+                          #     additional information to new users beyond the standard welcome message.
+
+                          #     **Changes**: New in Zulip 9.0 (feature level 242).
+                          # custom_welcome_message_text:
+                          #   type: string
+                          #   description: |
+                          #     The custom welcome message text provided by administrators to be included in the welcome
+                          #     message sent by the Welcome Bot to new users.
+
+                          #     **Changes**: New in Zulip 9.0 (feature level 242).
                           pm_content_in_desktop_notifications:
                             type: boolean
                             description: |
